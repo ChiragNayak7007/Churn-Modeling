@@ -115,17 +115,21 @@ For churn modeling following models are mostly used:
 
 # Model Evaluation Basics
 The formula for accuracy is: 
-# A(M) = (TN+TP)/(TN+TP+FP+FN)
+### A(M) = (TN+TP)/(TN+TP+FP+FN)
 TP is the number of true positives : Predicted as churned and they do
 TN is the number of true negatives: Predicted as remaining and they do
 FP is the number of false positives: Predicted as they will churn, but they don’t
 FN is the number of false negatives: Predicted as won’t churner but they churn
 
 When working with unbalanced dataset we can’t completely depend on Accuracy alone, we need to check the result of other matrix along with accuracy and they are:
-•	Sensitivity/Recall - TP / (TP + FN) how well the model recalls/identifies those that will leave. AKA the true positive rate
-•	Specificity - TN / (TN + FP) how well the model identifies those that will stay. 
-•	Precision TP / (TP + FP) how believable is the model? A low precision model will alarm you to those who are leaving that are actually staying.
-•	F1 score 2 * (precision * recall)/(precision + recall)is the harmonic mean between precision and recall or the balance. 
+•	Sensitivity/Recall - How well the model recalls/identifies those that will leave.
+### TP / (TP + FN)
+•	Specificity - How well the model identifies those that will stay.
+### TN / (TN + FP) 
+•	Precision- How believable is the model? A low precision model will alarm you to those who are leaving that are actually staying.
+### TP / (TP + FP) 
+•	F1 score- This is the harmonic mean between precision and recall or the balance.
+### 2 * (precision * recall)/(precision + recall)
 
 # When to use which type of models: Tips and Advice.
 There is no fixed approach which can be used for churn modeling. As type of model and its parameters all depend on the Features and relationship of the data.
