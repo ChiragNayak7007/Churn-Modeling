@@ -113,5 +113,38 @@ For churn modeling following models are mostly used:
 4)	Logistic Regression
 5)	Naive Bayes Classifier
 
+# Model Evaluation Basics
+The formula for accuracy is: 
+# A(M) = (TN+TP)/(TN+TP+FP+FN)
+TP is the number of true positives : Predicted as churned and they do
+TN is the number of true negatives: Predicted as remaining and they do
+FP is the number of false positives: Predicted as they will churn, but they don’t
+FN is the number of false negatives: Predicted as won’t churner but they churn
+
+When working with unbalanced dataset we can’t completely depend on Accuracy alone, we need to check the result of other matrix along with accuracy and they are:
+•	Sensitivity/Recall - TP / (TP + FN) how well the model recalls/identifies those that will leave. AKA the true positive rate
+•	Specificity - TN / (TN + FP) how well the model identifies those that will stay. 
+•	Precision TP / (TP + FP) how believable is the model? A low precision model will alarm you to those who are leaving that are actually staying.
+•	F1 score 2 * (precision * recall)/(precision + recall)is the harmonic mean between precision and recall or the balance. 
+
+# When to use which type of models: Tips and Advice.
+There is no fixed approach which can be used for churn modeling. As type of model and its parameters all depend on the Features and relationship of the data.
+Mostly used models are 
+# Random Forest Classifier:
+This model is best in most of the cases as it takes care of model overfitting which make the model bias to trained condition. Also it can easily balance the features by assigning weight to the branches.  Random forest runtimes are quite fast, and they are able to deal with unbalanced and missing data.
+
+Generally use when:
+
+1)	Have missing data 
+2)	Training data set size is too large.
+3)	 Have unbalance data set 
+4)	Overfitting is major concerned.
+
+# Logistic Regression
+Logistic regression is used to predict the odds of being a case based on the values of the independent variables (predictors). The odds are defined as the probability that a particular outcome is a case divided by the probability that it is a non-case. This model is best when we can see log graph like pattern in relationship among data.
+# Gradient Boosting Classifier
+This is also quite efficient as random forest  and takes care of Unbalanced data structure. When the complexity of relationship increased Gradient Boosting Classifier works much better than others.  
+# Naive Bayes Classifier
+This is a simple classifier and works when the complexity is low with simple dataset. This is suitable for small sized dataset. This model do have issue with overfitting so not much used for real time solutions but all depends on type and structure of the data.   
 
 
